@@ -1,0 +1,16 @@
+<p>todo works!</p>
+<h1>{{title}}</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+<tbody>
+<tr *ngFor="let todo of todos; let i=index">
+    <td>{{i}}</td>
+    <td>{{todo}}</td>
+</tr>
+</tbody>
+</table>
