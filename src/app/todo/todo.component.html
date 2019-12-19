@@ -11,6 +11,7 @@
 <tr *ngFor="let todo of todos; let i=index">
     <td>{{i}}</td>
     <td>{{todo}}</td>
+    <td (click)="delete(todo)">Delete</td>
 </tr>
 </tbody>
 </table>
