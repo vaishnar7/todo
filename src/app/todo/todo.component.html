@@ -1,10 +1,14 @@
 <p>todo works!</p>
 <h1>{{title}}</h1>
+<input type="text" value="{{newTodo}}"(input)="onTextChange($event)">
 <table>
     <thead>
         <tr>
             <th>Id</th>
             <th>Name</th>
+            <th>delete</th>
+            <th> <button (click)="add()">Add</button></th>
+            
         </tr>
     </thead>
 <tbody>
@@ -12,6 +16,7 @@
     <td>{{i}}</td>
     <td>{{todo}}</td>
     <td (click)="delete(todo)">Delete</td>
+   
 </tr>
 </tbody>
 </table>

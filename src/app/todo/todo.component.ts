@@ -11,7 +11,8 @@ export class TodoComponent implements OnInit {
     "todo 1",
     "todo 2",
     "todo 3",
-  ]
+  ];
+  newTodo=" ";
 
   constructor() { }
 
@@ -19,6 +20,17 @@ export class TodoComponent implements OnInit {
   }
   delete(todo){
     alert(todo);
+    this.todos=this.todos.filter(function(t){
+      return t!=todo;
+    })
+  }
+  add(){
+    alert("add")
+    this.todos.push(this.newTodo);
+    this.newTodo="";
+  }
+  onTextChange(event){
+    this.newTodo=event.target.value;
   }
 
 }
