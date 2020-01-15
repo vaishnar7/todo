@@ -1,20 +1,29 @@
 <p>todo works!</p>
 <h1>{{title}}</h1>
-<input type="text" value="{{newTodo}}"(input)="onTextChange($event)">
+<form [formGroup]="todoForm" (ngSubmit)="add()" >
+    <input placeholder="name" formControlName ="name" name="todo" type="text" required>
+    <input placeholder="discription" formControlName ="discription" name="discription" type="text">
+    <button type ="submit">Add</button>
+    <a routerLink="/add">View Todo</a>
+<button (click)="view()">View</button>
+</form>
 <table>
     <thead>
         <tr>
             <th>Id</th>
             <th>Name</th>
+            <th>discription</th>
             <th>delete</th>
-            <th> <button (click)="add()">Add</button></th>
+            
+            
             
         </tr>
     </thead>
 <tbody>
 <tr *ngFor="let todo of todos; let i=index">
-    <td>{{i}}</td>
-    <td>{{todo}}</td>
+    <td>{{todo._id}}</td>
+    <td>{{todo.name}}</td>
+    <td>{{todo.discription}}</td>
     <td (click)="delete(todo)">Delete</td>
    
 </tr>
